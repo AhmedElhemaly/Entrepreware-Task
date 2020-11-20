@@ -1,0 +1,43 @@
+<div class="container" align='center' style="margin-bottom: 25px">
+    <form (click)= "onSubmit()" autocomplete="off">
+        <div class="form-group">
+            <input type='text' [(ngModel)]='number' name='number'>
+            <div *ngIf='!number.match(mobNumberPattern)'>
+                Not valid Number
+            </div>
+            <button class='search-button' type='submit'>validate</button>
+        </div>
+    </form>
+</div>
+<table class="table table-striped" style='margin-bottom:20px'>
+    <thead>
+        <tr>
+            <th> id </th>
+            <th> number </th>
+            <th> valid </th>
+            <th> local_format </th>
+            <th> international_format </th>
+            <th> country_prefix </th>
+            <th> country_code </th>
+            <th> country_name </th>
+            <th> location </th>
+            <th> carrier </th>
+            <th> line_type </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> {{ numobJ.id }} </td>
+            <td> {{ numobJ.number }} </td>
+            <td> {{ numobJ.valid }} </td>
+            <td> {{ numobJ.local_format }} </td>
+            <td> {{ numobJ.international_format }} </td>
+            <td> {{ numobJ.country_prefix }} </td>
+            <td> {{ numobJ.country_code }} </td>
+            <td> {{ numobJ.country_name }} </td>
+            <td> {{ numobJ.location }} </td>
+            <td> {{ numobJ.carrier }} </td>
+            <td> {{ numobJ.line_type }} </td>
+        </tr>
+    </tbody>
+</table>
